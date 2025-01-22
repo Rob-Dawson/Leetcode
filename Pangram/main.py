@@ -39,4 +39,17 @@ def check_if_pangram_hashset():
     return True
 
 
+def check_if_pangram_hashset_local_copy():
+    sentence = "thequickbrownfoxjumpsoverthelazydog"
+    sentence = sentence.upper()
+    local_alphabet = alphabet.copy()
+    for i in sentence:
+        if i in local_alphabet:
+            local_alphabet.remove(i)
+    if len(local_alphabet) > 0:
+        return False
+    return True
+
+
 # print(check_if_pangram_hashset())
+# print(check_if_pangram_hashset_local_copy())
