@@ -16,4 +16,19 @@ def contains_duplicate_brute_force():
     return False
 
 
-contains_duplicate_brute_force()
+def contains_duplicate_hash_table():
+    """Loops through nums and checks if the number exists in the hash table.
+    Return True if exists
+    Adds number to hash table if number does not exist
+    """
+    number_hash = {}
+    for i in nums:
+        if i in number_hash:
+            return True
+        number_hash[i] = i
+    return False
+
+
+# result = scontains_duplicate_brute_force()
+result = contains_duplicate_hash_table()
+print(result)
