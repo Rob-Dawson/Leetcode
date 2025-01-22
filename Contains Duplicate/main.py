@@ -16,10 +16,17 @@ def contains_duplicate_brute_force():
     return False
 
 
+"""
+Example 2
+Hashset
+    Solves the problem
+"""
+
+
 def contains_duplicate_hash_table():
-    """Loops through nums and checks if the number exists in the hash table.
+    """Loops through nums and checks if the number exists in the hash set.
     Return True if exists
-    Adds number to hash table if number does not exist
+    Adds number to hash set if number does not exist
     """
     number_hash = {}
     for i in nums:
