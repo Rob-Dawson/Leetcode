@@ -55,11 +55,11 @@ alphabet_text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def check_if_pangram_set():
-    sentence = "thequickbrownfoxjumpsoverthelazydog"
+    sentence = "Cwm fjord bank glyphs vext quiz"
     sentence = sentence.upper()
     sentence_set = set(sentence)
     alphabet_set = set(alphabet_text)
-    return alphabet_set.issuperset(sentence_set)
+    return alphabet_set.issubset(sentence_set)
 
 
 # print(check_if_pangram_hashset())
