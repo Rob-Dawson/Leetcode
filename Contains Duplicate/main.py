@@ -1,10 +1,10 @@
 nums = [1, 2, 3, 4]
 
-"""
-Example 1
-Brute Force
-    Solves the problem but results in time out
-"""
+# """
+# Example 1
+# Brute Force
+#     Solves the problem but results in time out
+# """
 
 
 def contains_duplicate_brute_force():
@@ -16,11 +16,11 @@ def contains_duplicate_brute_force():
     return False
 
 
-"""
-Example 2
-Hashset
-    Solves the problem
-"""
+# """
+# Example 2
+# Hashset
+#     Solves the problem
+# """
 
 
 def contains_duplicate_hash_table():
@@ -36,6 +36,25 @@ def contains_duplicate_hash_table():
     return False
 
 
+# """
+# Example 3
+# Using Sort
+#     Solves the problem
+# """
+
+
+def contains_duplicate_sort():
+    """
+    Sorts the list first and then compares the current value with the next value
+    """
+    nums.sort()
+    for i, num1 in enumerate(nums[:-1]):
+        if num1 == nums[i + 1]:
+            return True
+    return False
+
+
 # result = scontains_duplicate_brute_force()
-result = contains_duplicate_hash_table()
+# result = contains_duplicate_hash_table()
+result = contains_duplicate_sort()
 print(result)
