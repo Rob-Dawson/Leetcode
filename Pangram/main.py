@@ -62,6 +62,18 @@ def check_if_pangram_set():
     return alphabet_set.issubset(sentence_set)
 
 
+def check_if_pangram_create_set():
+    sentence = "Cwm fjord bank glyphs vext quiz"
+
+    seen = set()
+
+    for char in sentence:
+        if char.isalpha():
+            seen.add(char)
+    return len(seen) == 26
+
+
 # print(check_if_pangram_hashset())
 # print(check_if_pangram_hashset_local_copy())
-print(check_if_pangram_set())
+# print(check_if_pangram_set())
+print(check_if_pangram_create_set())
