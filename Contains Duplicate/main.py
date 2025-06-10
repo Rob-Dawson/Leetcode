@@ -64,6 +64,10 @@ def contains_duplicate_set():
         s.add(num)
     return False
 
+def contains_duplicate_set_len():
+    return (len(nums) != len(set(nums)))
+
+
 # result = scontains_duplicate_brute_force()
 # result = contains_duplicate_hash_table()
 # result = contains_duplicate_sort()
@@ -91,7 +95,14 @@ contains_duplicate_set = timeit.timeit(
     number=100000
 )
 
+contains_duplicate_set_len = timeit.timeit(
+    stmt="contains_duplicate_set_len()",
+    globals=globals(),
+    number=100000
+)
+
 print(f"contains_duplicate_brute_force method:  {contains_duplicate_brute_force:.4f} seconds")
 print(f"contains_duplicate_hash_table method:  {contains_duplicate_hash_table:.4f} seconds")
 print(f"contains_duplicate_sort method:  {contains_duplicate_sort:.4f} seconds")
 print(f"contains_duplicate_set method:  {contains_duplicate_set:.4f} seconds")
+print(f"contains_duplicate_set_len method:  {contains_duplicate_set_len:.4f} seconds")
