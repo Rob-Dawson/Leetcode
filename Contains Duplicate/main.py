@@ -1,3 +1,5 @@
+import timeit
+
 nums = [1, 2, 3, 4]
 
 # """
@@ -54,7 +56,42 @@ def contains_duplicate_sort():
     return False
 
 
+def contains_duplicate_set():
+    s = set()
+    for num in nums:
+        if num in s:
+            return True
+        s.add(num)
+    return False
+
 # result = scontains_duplicate_brute_force()
 # result = contains_duplicate_hash_table()
-result = contains_duplicate_sort()
-print(result)
+# result = contains_duplicate_sort()
+# print(result)
+
+contains_duplicate_brute_force = timeit.timeit(
+    stmt="contains_duplicate_brute_force()",
+    globals=globals(),
+    number=100000
+)
+contains_duplicate_hash_table = timeit.timeit(
+    stmt="contains_duplicate_hash_table()",
+    globals=globals(),
+    number=100000
+)
+
+contains_duplicate_sort = timeit.timeit(
+    stmt="contains_duplicate_sort()",
+    globals=globals(),
+    number=100000
+)
+contains_duplicate_set = timeit.timeit(
+    stmt="contains_duplicate_set()",
+    globals=globals(),
+    number=100000
+)
+
+print(f"contains_duplicate_brute_force method:  {contains_duplicate_brute_force:.4f} seconds")
+print(f"contains_duplicate_hash_table method:  {contains_duplicate_hash_table:.4f} seconds")
+print(f"contains_duplicate_sort method:  {contains_duplicate_sort:.4f} seconds")
+print(f"contains_duplicate_set method:  {contains_duplicate_set:.4f} seconds")
